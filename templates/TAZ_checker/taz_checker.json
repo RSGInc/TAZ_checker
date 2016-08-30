@@ -401,31 +401,31 @@
     {
       "elements":[
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"households",
           "description":"Total households in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"population",
           "description":"Total population in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"vehicles",
           "description":"Total vehicles in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"avgincome",
           "description":"Average household income in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"employment",
           "description":"Total employment in TAZ"
@@ -679,19 +679,19 @@
           "description":"5-vehicle households in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"pop_age1",
           "description":"Population under 18 years age in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"pop_age2",
           "description":"Population over 18 but under 65 years age in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"pop_age3",
           "description":"Population over 65 years age in TAZ"
@@ -800,7 +800,7 @@
           "description":"School enrollment K-12 category 5 in TAZ"
         },
         {
-          "required":true,
+          "required":false,
           "type":"property",
           "name":"enr_col",
           "description":"College enrollment in TAZ"
