@@ -137,6 +137,8 @@ def performModel(input_files,
                 # back to the client.
                 dependency_checks = [('hh_size1', 'chk_bin_hhsize',
                                       'household size checks'),
+                                     ('hh_size1', 'chk_pop_hhsize',
+                                      'population household size checks'),
                                      ('hh_wrk1', 'chk_bin_hhwrk',
                                       'zero worker household checks'),
                                      ('hh_inc1', 'chk_bin_hhinc',
@@ -159,8 +161,6 @@ def performModel(input_files,
                                       'per-worker vehicle checks'),
                                      ('hh_wrk1', 'chk_perwrk_veh',
                                       'household size checks'),
-                                     ('chk_pop_hhsize', 'chk_perwrk_veh',
-                                      'vehicles per worker checks'),
                                      #
                                      ('hh_wrk1', 'regchk_empwrk',
                                       'regional employment checks'),
@@ -197,8 +197,7 @@ def performModel(input_files,
                     data_array = addStrCol(data_array, newcol)
                     logger.info('the array is %s', data_array)
                 data_array = addCol(data_array, 'temp', 0.0)
-                data_array = addCol(data_array, 'workers', 0.0)
-                data_array = addCol(data_array, 'pop_hhsize', 0.0)
+
                 # Build the summary text. Note that this output
                 # will be made into a CSV, so we separate using the columns.
                 summ_text = [('Description', 'Value',)]
@@ -208,9 +207,11 @@ def performModel(input_files,
                 # since this check is separate, it's not included in
                 # the field exclusion code above. :(
                 if file_iterator.hasProperty('hh_wrk1'):
+                    data_array = addCol(data_array, 'workers', 0.0)
                     data_array['workers'] = np.sum(
                         iface.recToArray(data_array[hh_wrk_vars]), axis=1)
                 if file_iterator.hasProperty('hh_size1'):
+                    data_array = addCol(data_array, 'pop_hhsize', 0.0)
                     data_array['pop_hhsize'] = data_array['hh_size1']
                     for i in range(2, 11):
                         data_array['pop_hhsize'] = data_array[
