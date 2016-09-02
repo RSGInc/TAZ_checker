@@ -227,8 +227,8 @@ def performModel(input_files,
                 if 'chk_bin_hhsize' in chkcols:
                     data_array['chk_bin_hhsize'] = checks.chkBinTotal(
                         data_array, hh_size_vars, 'households', bintol, labels1)
-                    summ_text.append('Number of TAZs with HH Size bins total mismatch', str(len(
-                        data_array[data_array['chk_bin_hhsize'] == labels1[1]])))
+                    summ_text.append(('Number of TAZs with HH Size bins total mismatch', str(len(
+                        data_array[data_array['chk_bin_hhsize'] == labels1[1]]))))
                 if 'chk_bin_hhwrk' in chkcols:
                     data_array['chk_bin_hhwrk'] = checks.chkBinTotal(
                         data_array, hh_wrk_vars, 'households', bintol, labels1)
