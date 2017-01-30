@@ -1,8 +1,6 @@
 # TAZ_checker
 TAZ data consistency checking tool for NMTK
 
-# test code
-
 Installation Instructions
 ------
 1.  Clone this repository into your NMTK_apps directory
